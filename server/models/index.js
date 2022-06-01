@@ -6,7 +6,30 @@ const Sauce = sequelize.define("sauces", {
   image: Sequelize.STRING,
 });
 
+const Item = sequelize.define("items", {
+  name: Sequelize.STRING,
+  price: Sequelize.FLOAT,
+  description: Sequelize.STRING,
+  category: Sequelize.STRING,
+  imageUrl: Sequelize.STRING
+
+});
+
+const User = sequelize.define("users", {
+  firstName: Sequelize.STRING,
+  lastName: Sequelize.STRING,
+  password: Sequelize.STRING,
+  email: Sequelize.STRING
+});
+
+const Order = sequelize.define("orders", {
+  itemName: Sequelize.STRING,
+  description: Sequelize.STRING,
+  quantity: Sequelize.INTEGER,
+  orderDate: Sequelize.DATE
+});
+
 module.exports = {
   db: sequelize,
-  Sauce,
+  Sauce, Item, User, Order
 };
