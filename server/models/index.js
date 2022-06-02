@@ -28,6 +28,17 @@ const Order = sequelize.define("orders", {
   orderDate: Sequelize.DATE
 });
 
+
+//model association 
+User.hasMany(Order);
+Order.belongsTo(User)
+
+Order.hasMany(Item)
+Item.belongsTo(Order)
+
+User.hasMany(Item)
+Item.belongsTo(User)
+
 module.exports = {
   db: sequelize,
   Sauce, Item, User, Order
