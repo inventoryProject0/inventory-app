@@ -10,9 +10,8 @@ const Item = sequelize.define("items", {
   name: Sequelize.STRING,
   price: Sequelize.FLOAT,
   description: Sequelize.STRING,
-  category: Sequelize.STRING,
+  category: Sequelize.ENUM("jewelery", "men's clothing", "electronics","women's clothing"),
   imageUrl: Sequelize.STRING
-
 });
 
 const User = sequelize.define("users", {
