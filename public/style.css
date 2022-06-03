@@ -1,5 +1,41 @@
-* {
+/* * {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
+} */
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+.card-container {
+ 
+  width: 400px;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 2rem;
+  margin: 5rem;
+}
+.card{
+  margin: 1rem;
+  width: 300px;
+  height: auto;
+ 
+}
+.card-image{
+  width: 200px;
+  height: 300px;
+} 
+
+.editItemform{
+  margin:  1rem;
+}
+
+.editItemform label{
+  margin-right:  2rem;
+}
+
+label{
+  width: 500px;
+}
+
