@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Item } from './Item';
 import { ItemList } from './ItemList'
 import { EditItem } from './EditItemForm';
+import { Nav } from './Nav'
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -56,8 +57,7 @@ export const App = () => {
 
 	return (
 		<main>	
-            <h1>E Commerce Store</h1>
-			<h2>All things 🔥</h2>
+			<Nav />
 			{isEditClicked ? <EditItem isEditClicked ={isEditClicked} item={items} setIsEditClicked={setIsEditClicked} itemUpdate ={itemUpdate} setItemUpdate={setItemUpdate} updateItem = {updateItem}/>:
 							<div className='container'>
 								<ItemList className='card-container' item={items}  deleteItem ={deleteItem} isEditClicked ={isEditClicked} setIsEditClicked={setIsEditClicked}/>
