@@ -24,7 +24,7 @@ export const Item = (props) => {
       {props.singleItem.description}
     </Typography>
     <Typography variant="h5" color ="text.secondary">
-      {props.singleItem.price}
+      {props.singleItem.price}$
     </Typography>
   </CardContent>
   <CardActions>
