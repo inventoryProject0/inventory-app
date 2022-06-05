@@ -26,7 +26,7 @@ export const Nav = (props) => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         E Commerce
                     </Typography>
-                    <Button color="inherit">Web App</Button>
+                    <Button color="inherit">Logged in as </Button>
                 </Toolbar>
             </AppBar>
         </Box>
