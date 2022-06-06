@@ -11,6 +11,7 @@ import { OrdersView } from './OrdersView'
 import { UsersView } from './UsersView'
 import InventoryIcon from '@mui/icons-material/Inventory';
 
+
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
 import { margin } from '@mui/system';
@@ -133,7 +134,6 @@ export const App = () => {
 
 	return (
 		<main>	
-
 			<nav className='Nav-container'>
 				<div className='menu-logo'>
 					<h1 style={{fontSize:'2rem', marginRight:'2rem'}}><InventoryIcon style={{fontSize:'2rem'}}/><span style={{color:'#080036'}}>Ware</span><span style={{color:'#F21E6A'}}>house</span>  </h1>
@@ -259,9 +259,6 @@ export const App = () => {
 			        </div>
 		    </div>
 			
-
-			
-			
 			<footer className='footerContainer'>
 				<ul className='footer-links'>
 					<li className='links'>Mobile App</li>
@@ -277,8 +274,6 @@ export const App = () => {
 					&copy; {ThisYear>2022? <span>`2022 - ${ThisYear}`</span>: <span>{ThisYear}</span>}  Designed and implemented by Yared Gari, Getu Taddesse and Raishan Bernard as an eduactional exercise during Multiverse bootcamp.
 				</ul>
 			</footer>
-			 
-			
 		</main>
 	)
 }
