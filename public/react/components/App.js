@@ -155,7 +155,7 @@ export const App = () => {
 				    <div className={isEditClicked || detailViewClicked ? 'nodisplay': 'SideBar'}>
 							<hr></hr>
 							<h3 className='sideBarHeader' onClick={()=>{setAllOrderClicked(false);setUsersClicked(false);setIsItemListDisplay(true)}}>All Items</h3>
-							<h3 className='sideBarHeader' onClick={()=>{setUsersClicked(true); setAllOrderClicked(false); setIsItemListDisplay(false); fetchUsers()}}>All Users</h3>
+							<h3 className='sideBarHeader' onClick={()=>{setUsersClicked(true); setAllOrderClicked(false); setIsItemListDisplay(false);setAddItemClicked(false); fetchUsers()}}>All Users</h3>
 							<h3 className='sideBarHeader' onClick={()=>{setAllOrderClicked(true); setUsersClicked(false); setIsItemListDisplay(false); fetchOrders()}}>All Orders</h3>
 							
 							<div className='categoty-menu'>
@@ -171,8 +171,10 @@ export const App = () => {
 			   
 			       <div className='DisplayArea'>
 
+
 				        {(!allOrderClicked && !isItemListDisplay && !addItemClicked && !isEditClicked && !detailViewClicked)  && <div className='user-table'>
-						                                               <table >
+
+						                        <table >
 																			<tr>
 																				<th style={{margin:'1rem'}}>Id</th>
 																				<th>First Name</th>
@@ -213,7 +215,7 @@ export const App = () => {
 																		isItemListDisplay={isItemListDisplay} 
 																		setIsItemListDisplay={setIsItemListDisplay}/> : 
 																<div className='addItem-button'>
-																	<button className={((isEditClicked) || (detailViewClicked)) || (usersClicked)? 'nodisplay': null} onClick={()=>{setAddItemClicked(true); setIsItemListDisplay(false)}} style={{marginTop:'1rem'}}>Add Item</button>
+																	<button className={((isEditClicked) || (detailViewClicked)) || (usersClicked)? 'nodisplay': null} onClick={()=>{setAddItemClicked(true); setIsItemListDisplay(false);setUsersClicked(false)}} style={{marginTop:'1rem'}}>Add Item</button>
 																</div>
 											}
 
