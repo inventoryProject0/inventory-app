@@ -171,8 +171,10 @@ export const App = () => {
 			   
 			       <div className='DisplayArea'>
 
-				        {(!allOrderClicked && !isItemListDisplay && usersClicked) && <div className='user-table'>
-						                                               <table >
+
+				        {(!allOrderClicked && !isItemListDisplay && !addItemClicked && !isEditClicked && !detailViewClicked)  && <div className='user-table'>
+
+						                        <table >
 																			<tr>
 																				<th style={{margin:'1rem'}}>Id</th>
 																				<th>First Name</th>
