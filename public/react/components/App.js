@@ -8,7 +8,7 @@ import { EditItem } from './EditItemForm';
 import { Nav } from './Nav'
 
 
-// import and prepend the api url to any fetch calls
+// import and prepend the api url to any fetch calls.
 import apiURL from '../api';
 
 export const App = () => {
