@@ -82,6 +82,11 @@ form{
  text-align: center;
  font-weight: bold;
 }
+.sideBarHeader:hover{
+  cursor: pointer;
+  color: #F21E6A;
+
+}
 .DisplayArea{
  align-items: center;
  border-bottom: 2px solid #F5F5F5;
