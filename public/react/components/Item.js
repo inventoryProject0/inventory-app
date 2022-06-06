@@ -9,29 +9,15 @@ import { blue } from '@mui/material/colors';
 
 export const Item = (props) => {
 
-  return  <Card sx={{ maxWidth: 345, backgroundColor: blue}}>
-  <CardMedia
-    component="img"
-    height="140"
-    image= {props.singleItem.imageUrl}
-    alt="green iguana"
-  />
-  <CardContent>
-    <Typography gutterBottom variant="h5" component="div">
-      {props.singleItem.name}
-    </Typography>
-    <Typography variant="body2" color="text.secondary">
-      {props.singleItem.description}
-    </Typography>
-    <Typography variant="h5" color ="text.secondary">
-      {props.singleItem.price}$
-    </Typography>
-  </CardContent>
-  <CardActions>
-    <Button size="small" onClick={()=>{props.setIsEditClicked(true)}}>Edit</Button>
-    <Button size="small" onClick={()=>{props.deleteItem(props.id)}}>Delete</Button>
-  </CardActions>
-</Card>
+  return <div className='card' onClick={()=>{props.setDetailViewClicked(true); props.setDetailId(props.singleItem.id); props.fetchSingleItem(props.singleItem.id); props.setIsItemListDisplay(false)}}>
+            <img className = "card-image" src = {props.singleItem.imageUrl}/>
+            <h3>{props.singleItem.name}</h3>
+            <p style={{textDecoration:'underline', color:'blue'}}>View detail</p>
+            <span style={{marginRight:'2rem',fontWeight:'bold', color:'#251A67'}} className='card-price'>${props.singleItem.price}</span>
+            <button style={{marginRight:'1rem', marginLeft:'3.5rem'}} onClick={()=>{props.setIsEditClicked(true); props.setSelectedId(props.singleItem.id)}}>Edit</button>
+            <button onClick={()=>{props.deleteItem(props.id)}}>Delete</button> 
+         </div>
+
 } 
 	
 //<img className = "card-image" src = {props.singleItem.imageUrl}/>
