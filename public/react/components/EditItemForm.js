@@ -1,57 +1,50 @@
 import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import { textAlign } from '@mui/system';
 
 
-export const EditItem = ({isEditClicked, setIsEditClicked, itemUpdate, setItemUpdate, updateItem, item}) => {
+
+export const EditItem = ({isEditClicked, setIsEditClicked, itemUpdate, setItemUpdate, updateItem, item,selectedId, isItemListDisplay, setIsItemListDisplay,setDetailViewClicked}) => {
+    
     function onsubmitHandler(event){
         event.preventDefault()
     }
     
     function onChangeHandler(event){
         const [formValue, formName] = [event.target.value, event.target.name]
-         setItemUpdate ((prevValue)=>{
+        console.log(formName)
+         setItemUpdate((prevValue)=>{
              return {
                  ...prevValue,
              [formName]:formValue
              }
-             
          })
     }
-
       return <>
         {item.map((indvItem, indx)=>{
-            console.log(indvItem.id, indx)
-        return <>
-                <form onSubmit={onsubmitHandler} key={indx}>
-                <h3>Edit an Item</h3>
-                <div className='editItemform'>
-                    <label className='editLabels' htmlFor='item-id'> Item Id</label>
-                    <input type='text' id='item-id' name = 'item-id'  placeholder={indvItem.id}/> 
+            if(indvItem.id===selectedId){
+                return <div className='SingleItemEditForm'> 
+                <form onSubmit={onsubmitHandler} key={indx} >
+                <div className="EditformHeader">
+                    <h3 >Edit an Item</h3> 
+                    <span onClick={()=>{setIsEditClicked(false);setIsItemListDisplay(true);setDetailViewClicked(false)}}><CloseIcon style={{marginTop:'1rem'}}/></span> 
                 </div>
-                <div className='editItemform'>
-                    <label htmlFor='category'> Category</label>
-                    <input type='text' id='category' name = 'item-category' placeholder={indvItem.category}/>
-                </div>
-                <div className='editItemform'>
-                    <label htmlFor='item-name'> Item Name</label>
-                    <input type='text' id='item-name' name = 'item-name' placeholder={indvItem.name}/>
-                </div>
-                <div className='editItemform'>
-                    <label htmlFor='item-price'> Price</label>
-                    <input type='text' id='item-price' name = 'item-price' placeholder={indvItem.price}/>
-                </div>
-                <div className='editItemform'>
-                    <label htmlFor='image-url'> Image Url</label>
-                    <input type='text' id='image-url' name = 'image-url' placeholder={indvItem.imageUrl}/>
-                </div>
-                <div className='editItemform'>
-                    <label htmlFor='item-description'> Description</label>
-                    <textarea type='text' id='item-description' name = 'item-description' />
-                </div>
-                <div className='editItemform'>
-                    <button type='submit' className='updateButton' onClick={()=>{setIsEditClicked(false); onChangeHandler; updateItem(indvItem.id)}}>Update</button>
-                </div>
+                    <label className='editItemform editLabels' htmlFor='item-id'> Item Id </label>
+                    <input className='editItemform editLabels inputSiz' type='text' id='item-id' name = 'item-id'  placeholder={indvItem.id}/>
+                    <label className='editItemform editLabels' htmlFor='category'> Category </label>
+                    <input className='editItemform editLabels inputSiz' type='text' id='category' name = 'category' value = {itemUpdate.category} placeholder={indvItem.category} onChange={onChangeHandler} />
+                    <label className='editItemform editLabels' htmlFor='name'> Item Name</label>
+                    <input className='editItemform editLabels inputSiz' type='text' id='item-name' name = 'name' value = {itemUpdate.name} placeholder={indvItem.name} onChange={onChangeHandler}/>
+                    <label className='editItemform editLabels' htmlFor='price'> Price</label>
+                    <input className='editItemform editLabels inputSiz' type='text' id='item-price' name = 'price' value = {itemUpdate.price} placeholder={indvItem.price} onChange={onChangeHandler}/>
+                    <label className='editItemform editLabels' htmlFor='imageUrl'> Image Url</label>
+                    <input className='editItemform editLabels inputSiz' type='text' id='image-url' name = 'imageUrl' value = {itemUpdate.imageUrl} placeholder={indvItem.imageUrl} onChange={onChangeHandler}/>
+                    <label  className='editItemform editLabels' htmlFor='description'> Description </label>
+                    <textarea className='editItemform editLabels textAreaSiz' type='text' id='item-description' name = 'description' value = {itemUpdate.description} onChange={onChangeHandler}/>
+                    <button type='submit' className='updateButton' onClick={()=>{setIsEditClicked(false); updateItem(indvItem.id);setIsItemListDisplay(true);setDetailViewClicked(false)}}>Update</button>
             </form>
-            </>
+            </div>
+            }
     })
         }
       </>
