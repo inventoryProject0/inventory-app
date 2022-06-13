@@ -28,8 +28,8 @@ This full stack inventory application is designed and implemented as an educatio
 * RestFull api for Viewing, creating, reading and updating items and orders.
 
 ## Link to deployed site  
-*
-
+*[
+](https://inventory-app-mgt.herokuapp.com/)
 ## Installation intractions
 
 1. `npm install`
