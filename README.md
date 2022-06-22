@@ -29,7 +29,7 @@ This full stack inventory application is designed and implemented as an educatio
 
 ## Link to deployed site  
 *(https://inventory-app-mgt.herokuapp.com/)
-## Installation intractions
+## Installation instructions
 
 1. `npm install`
 2. `npm run seed`
